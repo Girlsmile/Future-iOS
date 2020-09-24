@@ -9,16 +9,73 @@
 
 @interface ViewController ()
 
+@property(nonatomic, assign) int ticketsNum;
+
+
 @end
 
 @implementation ViewController
+
+-(void)gengerateTickets {
+    self.ticketsNum = 10000;
+    
+    NSLock *lock = [[NSLock alloc] init];
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.currentQueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        
+//        dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+        for (int i=0; i<100; i++) {
+//            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+            @synchronized (self) {
+                self.ticketsNum -= 1;
+                NSLog(@"剩余车票%d",self.ticketsNum);
+            }
+           
+           
+           
+//            dispatch_semaphore_signal(sem);
+        }
+        
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i=0; i<100; i++) {
+            @synchronized (self) {
+                self.ticketsNum -= 1;
+                NSLog(@"剩余车票%d",self.ticketsNum);
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i=0; i<100; i++) {
+            @synchronized (self) {
+                self.ticketsNum -= 1;
+                NSLog(@"剩余车票%d",self.ticketsNum);
+            }
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i=0; i<100; i++) {
+            @synchronized (self) {
+                self.ticketsNum -= 1;
+                NSLog(@"剩余车票%d",self.ticketsNum);
+            }
+        }
+    });
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.redColor;
     
+    [self gengerateTickets];
+
+    return;
     dispatch_queue_t concurrentDispatchQueue = dispatch_queue_create("com.a.currentQueue", DISPATCH_QUEUE_CONCURRENT);
-//
+//v
 //    dispatch_async(concurrentDispatchQueue, ^{
 //
 //    });
