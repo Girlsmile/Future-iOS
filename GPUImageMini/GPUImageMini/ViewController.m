@@ -58,8 +58,15 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     [self setupUI:true];
-    [self setupCamera];
+    dispatch_after(0.3, dispatch_get_main_queue(), ^{
+        
+        [self->_showGLPreview setupGL];
+        [self setupCamera];
+    });
+    
 }
+
+
 
 -(void)setupCamera {
     //captureSession 担当ch
@@ -119,9 +126,14 @@
     _showGLPreview.frame = self.view.bounds;
     _showGLPreview.backgroundColor = [UIColor systemBlueColor];
     
+  
+    
+    
     [self.view addSubview: _label];
     [self.view addSubview: _showGLPreview];
     [self.view bringSubviewToFront: _label];
+    
+    
 }
 
 @end

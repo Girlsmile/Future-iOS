@@ -16,6 +16,8 @@
 		92527A02251C4E120009815F /* GPUImageMiniTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92527A01251C4E120009815F /* GPUImageMiniTests.m */; };
 		92527A0D251C4E120009815F /* GPUImageMiniUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92527A0C251C4E120009815F /* GPUImageMiniUITests.m */; };
 		92527A21251C51DA0009815F /* ProcressGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92527A20251C51DA0009815F /* ProcressGLView.m */; };
+		92527A33251C8C3B0009815F /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 92527A32251C8C3B0009815F /* Shader.fsh */; };
+		92527A38251C8C3F0009815F /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 92527A37251C8C3F0009815F /* Shader.vsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		92527A0E251C4E120009815F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92527A20251C51DA0009815F /* ProcressGLView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProcressGLView.m; sourceTree = "<group>"; };
 		92527A25251C51EE0009815F /* ProcressGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProcressGLView.h; sourceTree = "<group>"; };
+		92527A32251C8C3B0009815F /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = "../../../../old/LearnOpenGLES-master/Demo02-摄像头采集和渲染/LearnOpenGLESWithGPUImage/Shader.fsh"; sourceTree = "<group>"; };
+		92527A37251C8C3F0009815F /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = "../../../../old/LearnOpenGLES-master/Demo02-摄像头采集和渲染/LearnOpenGLESWithGPUImage/Shader.vsh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				925279F3251C4E120009815F /* LaunchScreen.storyboard */,
 				925279F6251C4E120009815F /* Info.plist */,
 				925279F7251C4E120009815F /* main.m */,
+				92527A32251C8C3B0009815F /* Shader.fsh */,
+				92527A37251C8C3F0009815F /* Shader.vsh */,
 			);
 			path = GPUImageMini;
 			sourceTree = "<group>";
@@ -239,9 +245,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92527A33251C8C3B0009815F /* Shader.fsh in Resources */,
 				925279F5251C4E120009815F /* LaunchScreen.storyboard in Resources */,
 				925279F2251C4E120009815F /* Assets.xcassets in Resources */,
 				925279F0251C4E100009815F /* Main.storyboard in Resources */,
+				92527A38251C8C3F0009815F /* Shader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
