@@ -6,10 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ProcressGLView.h"
+#import "LYOpenGLView.h"
 
 
-@implementation ProcressGLView
+@implementation LYOpenGLView
 
 -(void) setupGL {
     

@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
-#import "ProcressGLView.h"
+#import "LYOpenGLView.h"
 
 @interface ViewController () <AVCaptureVideoDataOutputSampleBufferDelegate>
 
