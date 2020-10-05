@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .red
         self.view.addSubview(tableView)
         tableView.frame = view.frame
-//        tableView.addConstraint(NSLayoutConstraint.init(item: tableView, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: <#T##CGFloat#>))
+        
 //        // Do any additional setup after loading the view.
     }
 
