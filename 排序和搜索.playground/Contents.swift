@@ -366,3 +366,83 @@ last(match(sortMerge(demos))).forEach { (item) in
 }
 //TODO 先做到这吧
 
+
+//-----------------二分查找一个旋转有序数组----------------//
+
+let nums = [4,5,6,7,0,1,2]
+
+func search(nums: [Int], target: Int) -> Int {
+    
+    let mid = nums[nums.count/2]
+    let left = nums[0]
+    let right = nums[nums.count-1]
+    
+    if mid == target {
+        return nums.count/2
+    }
+    
+    if mid >= left {
+        var left2 = 0
+        var mid2 = mid/2
+        var right2 = mid
+        while left2 < right2 {
+            mid2 = (right2 - left2) / 2 + left2
+            
+            print(mid2, "nums[mid2]",nums[mid2])
+            if nums[mid2] == target {
+                return mid2
+            } else if nums[mid2] > target {
+                right2 = mid2
+            } else {
+                left2 = mid2
+            }
+        }
+    } else {
+        var newArray: [Int] = []
+        for index in mid..<right {
+            newArray.append(nums[index])
+        }
+        
+        return search(nums: newArray, target: target)
+    }
+    
+    return -1
+}
+
+//TODO
+print("旋转数组", search(nums: nums, target: 4))
+
+
+//标准答案
+func search2(nums: [Int], target: Int) -> Int {
+    var (left, mid, right) = (0, 0, nums.count-1)
+    
+    while left <= right {
+        mid = (right - left) / 2 + left
+        if nums[mid] == target {
+            return mid
+        }
+        
+        if nums[mid] >= nums[left] {
+            if nums[mid] > target && target >= nums[left] {
+                right = mid - 1
+            } else {
+                left = mid + 1
+            }
+        } else {
+            if nums[mid] < target && target <= nums[right] {
+                left = mid + 1
+            } else {
+                right = mid - 1
+            }
+        }
+    }
+    
+    return -1
+}
+
+search2(nums: nums, target: 1)
+
+// 深度优先
+
+
